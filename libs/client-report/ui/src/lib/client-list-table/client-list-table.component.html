@@ -1,40 +1,31 @@
-<p-table
-  [columns]="columns"
-  [value]="clientList"
-  [style]="{ width: '100%', overflow: 'auto' }"
-  [paginator]="true"
-  [rows]="10"
->
-  <ng-template pTemplate="header" let-columns>
-    <tr>
-      <th
-        class="table-header"
-        [pSortableColumn]="col.field"
-        *ngFor="let col of columns"
-      >
-        {{ col.header }}
-        <p-sortIcon
-          *ngIf="col.field !== 'action'"
-          field="{{ col.field }}"
-        ></p-sortIcon>
-      </th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-tableData let-columns="columns">
-    <tr>
-      <td class="table-column" *ngFor="let col of columns">
-        <ng-content
-          *ngIf="col.field === 'action'; then actionBlock; else dataBlock"
-        ></ng-content>
-        <ng-template #dataBlock>{{ tableData[col.field] }} </ng-template>
-        <ng-template #actionBlock>
-          <p-button
-            label="Edit"
-            icon="pi pi-pencil"
-            iconPos="left"
-          ></p-button>
-        </ng-template>
-      </td>
-    </tr>
-  </ng-template>
-</p-table>
+<div class="container">
+  <button mat-flat-button (click)="onCreateReportButtonClick()">
+    <i class="material-icons add-icon">add</i>
+    Create new report
+  </button>
+  <table class="table">
+    <caption class="table__caption">Сlients reports</caption>
+    <thead class="table__head">
+      <tr>
+        <th class="table__head-column" *ngFor="let column of columns">
+          <span>{{ column }}</span>
+        </th>
+        <th class="table__head--last"></th>
+      </tr>
+    </thead>
+    <tbody class="table__body">
+      <tr class="table__row" *ngFor="let client of clientList | paginate: { itemsPerPage: 10, currentPage: p }">
+        <td class="table__body-column" *ngFor="let column of columns;">
+          <span>{{ client[column] }}</span>
+        </td>
+        <td class="table__body-edit">
+          <div [ngClass]="{ 'table__edit--disabled': isEditButtonDisabled }" (click)="onEditButtonClick(client)">
+            <i class="material-icons">edit</i>
+            <span>Edit</span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls previousLabel="" nextLabel="" (pageChange)="p = $event"></pagination-controls>
+</div>

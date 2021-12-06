@@ -8,6 +8,7 @@ export interface Client {
   email: string;
   phone: string;
   country: string;
+  birthDate: string;
   postcode: string;
   houseNr: number;
   addition: string;

@@ -1,1 +1,145 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+@import "~normalize.css";
+@import "../src/styles/variables/color";
+
+html,
+body {
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  margin: 0;
+}
+
+.mat-typography,
+.mat-form-field,
+.mat-option,
+.mat-select,
+.mat-flat-button {
+  font-family: "Montserrat", sans-serif;
+}
+
+.mat-dialog-container {
+  background: white;
+  border: 2px solid $blue-50 !important;
+  border-radius: 16px !important;
+  padding: 0px !important;
+}
+
+.mat-form-field {
+  width: 300px;
+  height: 40px;
+  margin-bottom: 25px;
+}
+
+.container__address-field.mat-form-field {
+  width: 144px;
+  margin-right: 12px;
+}
+
+.mat-form-field-flex > .mat-form-field-infix {
+  padding: 0.5em 0px 0.9em 0px !important;
+}
+.mat-form-field-label-wrapper {
+  top: -1.5em;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  transform: translateY(-1.1em) scale(0.75);
+  width: 133.33333%;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+  color: #f44336;
+}
+
+.mat-form-field-appearance-outline .mat-select-arrow-wrapper {
+  padding-right: 8px;
+  padding-top: 9px;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: $blue-100;
+}
+
+.mat-select-panel:not([class*="mat-elevation-z"]) {
+  margin-top: 10px;
+}
+
+.mat-form-field-outline-start {
+  border-radius: 8px 0 0 8px !important;
+  min-width: 8px !important;
+  color: $blue-50;
+}
+
+.mat-form-field-outline-end {
+  border-radius: 0 8px 8px 0 !important;
+  color: $blue-50;
+}
+
+.ngx-pagination {
+  padding-left: 0px !important;
+
+  > li > a {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    color: $blue-100 !important;
+    padding: 10px 16px !important;
+
+    &:hover {
+      background: white !important;
+    }
+  }
+}
+
+.ngx-pagination .current {
+  padding: 10px 16px !important;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  background: $gray-10 !important;
+  color: $blue-200 !important;
+  border-radius: 8px !important;
+}
+
+.mat-select-panel {
+  border: 1px solid $blue-100 !important;
+  border-radius: 8px !important;
+  background: white;
+}
+
+.mat-select-value {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18px;
+  color: $blue-100;
+}
+
+.mat-select-arrow {
+  color: $blue-100 !important;
+}
+
+.mat-datepicker-toggle {
+  color: $blue-100 !important;
+}
+
+.mat-flat-button {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21px !important;
+  border-radius: 8px !important;
+  background: $blue-200;
+  margin-right: 12px !important;
+  padding: 10px 29px 9px 29px !important;
+}
+
+.add-icon.material-icons {
+  margin-left: -22px;
+  margin-top: -3px;
+  font-size: 20px;
+}
+
+.mat-flat-button.mat-button-disabled.mat-button-disabled {
+  background: gray;
+}

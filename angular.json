@@ -9,7 +9,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/client-report/ui"],
+          "outputs": [
+            "coverage/libs/client-report/ui"
+          ],
           "options": {
             "jestConfig": "libs/client-report/ui/jest.config.js",
             "passWithNoTests": true
@@ -35,7 +37,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/client-report/views"],
+          "outputs": [
+            "coverage/libs/client-report/views"
+          ],
           "options": {
             "jestConfig": "libs/client-report/views/jest.config.js",
             "passWithNoTests": true
@@ -61,7 +65,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/report",
             "index": "apps/report/src/index.html",
@@ -69,8 +75,13 @@
             "polyfills": "apps/report/src/polyfills.ts",
             "tsConfig": "apps/report/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["apps/report/src/favicon.ico", "apps/report/src/assets"],
+            "assets": [
+              "apps/report/src/favicon.ico",
+              "apps/report/src/assets"
+            ],
             "styles": [
+              "./node_modules/normalize.css/normalize.css",
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "apps/report/src/styles.scss",
               "node_modules/primeng/resources/themes/saga-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
@@ -140,7 +151,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/report"],
+          "outputs": [
+            "coverage/apps/report"
+          ],
           "options": {
             "jestConfig": "apps/report/jest.config.js",
             "passWithNoTests": true
@@ -169,14 +182,20 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/report-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/report-e2e/**/*.{js,ts}"
+            ]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": ["report"]
+      "implicitDependencies": [
+        "report"
+      ]
     },
     "shared-core-api": {
       "projectType": "library",
@@ -186,7 +205,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/core-api"],
+          "outputs": [
+            "coverage/libs/shared/core-api"
+          ],
           "options": {
             "jestConfig": "libs/shared/core-api/jest.config.js",
             "passWithNoTests": true

@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedCoreApiModule } from '@demo-repo/shared/core-api';
 import { HttpClientModule } from '@angular/common/http';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),
     SharedCoreApiModule.forRoot(),
     HttpClientModule,
+    NoopAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -63,6 +63,6 @@
   <div>
     <button [disabled]="!clientForm.valid" class="container__submit-button" mat-flat-button
       (click)="onActionButtonClick()">Submit</button>
-    <button class="container__cancel-button" mat-flat-button (click)="onActionButtonClick()">Cancel</button>
+    <button class="container__cancel-button" mat-flat-button mat-dialog-close>Cancel</button>
   </div>
 </div>

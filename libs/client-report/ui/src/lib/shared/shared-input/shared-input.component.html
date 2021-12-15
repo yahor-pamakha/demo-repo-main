@@ -1,0 +1,24 @@
+<div [ngClass]="{'address-input' : fieldTitle === houseNrFieldTitle }">
+    <mat-form-field [ngClass]="{'container__address-field' : fieldTitle === houseNrFieldTitle }" appearance="outline">
+        <input class="input" *ngIf="inputType === 'text'" matInput [formControl]="control" placeholder=""
+            autocomplete="off" />
+
+        <mat-select class="input" *ngIf="inputType === 'select'" [formControl]="control">
+            <mat-option class="input" value="male">Male</mat-option>
+            <mat-option class="input" value="female">Female</mat-option>
+        </mat-select>
+
+        <input *ngIf="inputType === 'datePicker'" class="input" matInput [formControl]="control"
+            [matDatepicker]="picker" />
+        <mat-datepicker-toggle *ngIf="inputType === 'datePicker'" matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+        <span class="field-title">{{ fieldTitle }}</span>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="fieldTitle === houseNrFieldTitle"
+        [ngClass]="{'container__address-field' : fieldTitle === houseNrFieldTitle }" appearance="outline">
+        <input class="input" *ngIf="inputType === 'text'" matInput [formControl]="separateControl" placeholder=""
+            autocomplete="off" />
+    </mat-form-field>
+</div>

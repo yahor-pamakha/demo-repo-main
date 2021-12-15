@@ -15,11 +15,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SharedInputComponent } from './shared/shared-input/shared-input.component';
 
 
 @NgModule({
   imports: [CommonModule, TableModule, ButtonModule, NgxPaginationModule, MatIconModule, MatDialogModule, FormsModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatDatepickerModule, MatSelectModule, MatNativeDateModule, MatSnackBarModule],
-  declarations: [ClientListTableComponent, ClientEditingDialogComponent],
+  declarations: [ClientListTableComponent, ClientEditingDialogComponent, SharedInputComponent],
   exports: [ClientListTableComponent, ClientEditingDialogComponent],
 })
 export class ClientReportUiModule { }

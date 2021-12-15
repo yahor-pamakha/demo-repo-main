@@ -18,28 +18,6 @@
         display: flex;
         flex-direction: column;
         margin: 0 -11px 32px auto;
-
-        &-input,
-        &-input-option {
-            font-size: 15px;
-            font-weight: 500;
-            line-height: 18px;
-            color: $blue-100;
-        }
-    }
-
-    &__address {
-        display: flex;
-    }
-
-    &__field-title {
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 20px;
-        color: $blue-100;
-        position: absolute;
-        top: 5px;
-        left: -209px;
     }
 
     &__submit-button {

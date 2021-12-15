@@ -1,64 +1,10 @@
 <div class="container">
   <span class="container__title">Edit client</span>
   <form class="container__form" [formGroup]="clientForm">
-    <mat-form-field appearance="outline">
-      <input class="container__form-input" matInput required placeholder="" autocomplete="off"
-        formControlName="nameFormControl" />
-      <mat-error *ngIf="!clientForm.controls['nameFormControl'].value">Name is required</mat-error>
-      <mat-error *ngIf="clientForm.controls['nameFormControl'].errors && clientForm.controls['nameFormControl'].value">
-        Name is invalid</mat-error>
-      <span class="container__field-title">Name</span>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-select required class="container__form-input" formControlName="genderFormControl">
-        <mat-option class="container__form-input" value="male">Male</mat-option>
-        <mat-option class="container__form-input" value="female">Female</mat-option>
-      </mat-select>
-      <span class="container__field-title">Gender</span>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <input class="container__form-input" matInput required formControlName="birthDateFormControl"
-        [matDatepicker]="picker" />
-      <mat-error *ngIf="!clientForm.controls['birthDateFormControl'].value">Birth Date is required</mat-error>
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-      <span class="container__field-title">Birth Date</span>
-    </mat-form-field>
-    <mat-form-field *ngFor="let input of inputs; index as i" appearance="outline">
-      <input class="container__form-input" matInput required placeholder="" autocomplete="off"
-        formControlName="{{input}}FormControl" />
-      <mat-error *ngIf="!clientForm.controls[input+'FormControl'].value">{{ inputTitles[i] }} is required</mat-error>
-      <mat-error
-        *ngIf="clientForm.controls[input+'FormControl'].errors && clientForm.controls[input+'FormControl'].value">{{
-        inputTitles[i] }} is invalid</mat-error>
-      <span class="container__field-title">{{ inputTitles[i] }}</span>
-    </mat-form-field>
-    <div class="container__address">
-      <mat-form-field class="container__address-field" appearance="outline">
-        <input class="container__form-input" matInput required placeholder="" autocomplete="off"
-          formControlName="houseNrFormControl" />
-        <mat-error *ngIf="!clientForm.controls['houseNrFormControl'].value">House no. is required</mat-error>
-        <mat-error *ngIf="clientForm.errors?.isEmptyValue">Invalid</mat-error>
-        <span class="container__field-title">House no. | addition</span>
-      </mat-form-field>
-      <mat-form-field class="container__address-field" appearance="outline">
-        <input class="container__form-input" matInput required placeholder="" autocomplete="off"
-          formControlName="additionFormControl" />
-        <mat-error *ngIf="!clientForm.controls['additionFormControl'].value">Addition is required</mat-error>
-      </mat-form-field>
-    </div>
-    <mat-form-field appearance="outline">
-      <input class="container__form-input" matInput required placeholder="" autocomplete="off"
-        formControlName="cityFormControl" />
-      <mat-error *ngIf="!clientForm.controls['cityFormControl'].value">City is required</mat-error>
-      <span class="container__field-title">City</span>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <input class="container__form-input" matInput required placeholder="" autocomplete="off"
-        formControlName="countryFormControl" />
-      <mat-error *ngIf="!clientForm.controls['countryFormControl'].value">Country is required</mat-error>
-      <span class="container__field-title">Country</span>
-    </mat-form-field>
+    <shared-input *ngFor="let input of testInputs" [inputType]="input.inputType"
+      [control]="clientForm[input.formControl]" [fieldTitle]="input.title"
+      [separateControl]="clientForm['additionFormControl']">
+    </shared-input>
   </form>
   <div>
     <button [disabled]="!clientForm.valid" class="container__submit-button" mat-flat-button
